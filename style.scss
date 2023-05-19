@@ -1,0 +1,91 @@
+// colors
+$blue: #5c7aff;
+$light-blue: #a0dde6;
+$pink: #f9b9f2;
+$grey: #0b3954;
+$rich-black: #0c1821;
+$white: #f1e4f3;
+
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  color: $white;
+  font-family: "pt sans", sans-serif;
+  body {
+    background-color: $grey;
+
+    .hamburger {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 999;
+      span {
+        border-radius: 20px;
+        width: 25px;
+        height: 3px;
+        margin: 2px 0;
+        background-color: $white;
+        transition: .4s;
+      }
+      &.active {
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(1) {
+          transform: rotate(45deg) translate(4px, 6px);
+        }
+        span:nth-child(3) {
+          transform: rotate(-45deg) translate(4px, -6px);
+        }
+      }
+    }
+
+    .navcontainer {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    ul {
+      &.nav {
+        transition: .5s;
+        display: none;
+        text-align: center;
+        line-height: 150%;
+        font-size: 2rem;
+        list-style-type: none;
+        position: fixed;
+        z-index: 999;
+        &.active {
+          display: block;
+        }
+      }
+      a {
+        position: relative;
+        text-decoration: none;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: $white;
+          visibility: hidden;
+          transition: width 0.3s ease;
+        }
+        &:hover::before {
+          visibility: visible;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
