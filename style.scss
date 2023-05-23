@@ -6,17 +6,59 @@ $grey: #0b3954;
 $rich-black: #0c1821;
 $white: #f1e4f3;
 
-// fonts
+// font-family: pt sans;
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+// scrollbar
+::-webkit-scrollbar {
+  display: none;
+}
 
 * {
   margin: 0;
   padding: 0;
   color: $white;
   font-family: "pt sans", sans-serif;
+  scroll-behavior: smooth;
+  &::selection {
+    color: $light-blue;
+    background-color: #0c18213c;
+  }
   body {
+    .test {
+      position: fixed;
+      border: 1px solid $white;
+      background-color: red;
+      font-size: 1rem;
+      left: 10px;
+      top: 10px;
+      padding: 5px;
+      border-radius: 10px;
+      z-index: 999;
+    }
     background-color: $grey;
-
+    main {
+      transition: 0.2s;
+      &.blur {
+        filter: blur(5px) brightness(0.5);
+        background: #00000070;
+        cursor: default;
+      }
+      .title {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        h1 {
+          font-size: 3.5rem;
+        }
+        p {
+          position: absolute;
+          bottom: 10px;
+        }
+      }
+    }
     .hamburger {
       position: fixed;
       top: 10px;
@@ -31,7 +73,7 @@ $white: #f1e4f3;
         height: 3px;
         margin: 2px 0;
         background-color: $white;
-        transition: .4s;
+        transition: 0.2s;
       }
       &.active {
         span:nth-child(2) {
@@ -51,11 +93,18 @@ $white: #f1e4f3;
       display: flex;
       align-items: center;
       justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 50%;
     }
 
     ul {
       &.nav {
-        transition: .5s;
+        height: fit-content;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s;
         display: none;
         text-align: center;
         line-height: 150%;
@@ -66,24 +115,33 @@ $white: #f1e4f3;
         &.active {
           display: block;
         }
-      }
-      a {
-        position: relative;
-        text-decoration: none;
-        &::before {
-          content: "";
-          position: absolute;
-          width: 0;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: $white;
-          visibility: hidden;
-          transition: width 0.3s ease;
+        &:hover li a {
+          filter: opacity(0.4);
         }
-        &:hover::before {
-          visibility: visible;
-          width: 100%;
+        li a:hover {
+          filter: none;
+        }
+        a {
+          position: relative;
+          text-decoration: none;
+          &::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            border-radius: 5px;
+            background-color: $white;
+            visibility: hidden;
+            transition: width 0.3s ease;
+          }
+          &:hover {
+            &::before {
+              visibility: visible;
+              width: 100%;
+            }
+          }
         }
       }
     }

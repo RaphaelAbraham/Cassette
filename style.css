@@ -1,12 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   color: #f1e4f3;
   font-family: "pt sans", sans-serif;
+  scroll-behavior: smooth;
+}
+*::selection {
+  color: #a0dde6;
+  background-color: rgba(12, 24, 33, 0.2352941176);
 }
 * body {
   background-color: #0b3954;
+}
+* body .test {
+  position: fixed;
+  border: 1px solid #f1e4f3;
+  background-color: red;
+  font-size: 1rem;
+  left: 10px;
+  top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 999;
+}
+* body main {
+  transition: 0.2s;
+}
+* body main.blur {
+  filter: blur(5px) brightness(0.5);
+  background: rgba(0, 0, 0, 0.4392156863);
+  cursor: default;
+}
+* body main .title {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+* body main .title h1 {
+  font-size: 3.5rem;
+}
+* body main .title p {
+  position: absolute;
+  bottom: 10px;
 }
 * body .hamburger {
   position: fixed;
@@ -23,7 +65,7 @@
   height: 3px;
   margin: 2px 0;
   background-color: #f1e4f3;
-  transition: 0.4s;
+  transition: 0.2s;
 }
 * body .hamburger.active span:nth-child(2) {
   opacity: 0;
@@ -39,8 +81,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
 }
 * body ul.nav {
+  height: fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
   transition: 0.5s;
   display: none;
   text-align: center;
@@ -53,22 +102,29 @@
 * body ul.nav.active {
   display: block;
 }
-* body ul a {
+* body ul.nav:hover li a {
+  filter: opacity(0.4);
+}
+* body ul.nav li a:hover {
+  filter: none;
+}
+* body ul.nav a {
   position: relative;
   text-decoration: none;
 }
-* body ul a::before {
+* body ul.nav a::before {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
   bottom: 0;
   left: 0;
+  border-radius: 5px;
   background-color: #f1e4f3;
   visibility: hidden;
   transition: width 0.3s ease;
 }
-* body ul a:hover::before {
+* body ul.nav a:hover::before {
   visibility: visible;
   width: 100%;
 }
