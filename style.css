@@ -29,6 +29,8 @@
   z-index: 999;
 }
 * body main {
+  background: rgb(11, 57, 84);
+  background: linear-gradient(180deg, rgb(11, 57, 84) 0%, rgb(60, 72, 88) 100%);
   transition: 0.2s;
 }
 * body main .download {
@@ -39,12 +41,19 @@
 }
 * body main .download a {
   text-decoration: none;
-  background-color: #5c7aff;
+  background-color: #f1e4f3;
   padding: 5px;
+  border-radius: 5px;
+  color: #0b3954;
+  transition: 0.3s;
+}
+* body main .download a:hover {
+  background-color: #f1e4f3;
+  color: #0b3954;
   border-radius: 10px;
 }
 * body main.blur {
-  filter: blur(5px) brightness(0.5);
+  filter: blur(10px) brightness(0.5);
   background: rgba(0, 0, 0, 0.4392156863);
   cursor: default;
 }
@@ -61,6 +70,32 @@
 * body main .title p {
   position: absolute;
   bottom: 10px;
+}
+* body main .intro {
+  position: relative;
+  background: url(./ressources/photo-1589128995173-e1cd084b3db9.jpeg) no-repeat fixed center/cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+* body main .intro::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.5843137255);
+}
+* body main .intro p {
+  text-align: justify;
+  width: 60%;
+  line-height: calc(7px + 4vw);
+  font-size: calc(1rem + 0.5vw);
+  position: relative;
+  z-index: 100;
 }
 * body .hamburger {
   position: fixed;

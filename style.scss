@@ -39,6 +39,12 @@ $white: #f1e4f3;
     }
 
     main {
+      background: rgb(11, 57, 84);
+      background: linear-gradient(
+        180deg,
+        rgba(11, 57, 84, 1) 0%,
+        rgb(60, 72, 88) 100%
+      );
       transition: 0.2s;
       .download {
         position: fixed;
@@ -47,13 +53,20 @@ $white: #f1e4f3;
         z-index: 1;
         a {
           text-decoration: none;
-          background-color: $blue;
+          background-color: $white;
           padding: 5px;
-          border-radius: 10px;
+          border-radius: 5px;
+          color: $grey;
+          transition: 0.3s;
+          &:hover {
+            background-color: $white;
+            color: $grey;
+            border-radius: 10px;
+          }
         }
       }
       &.blur {
-        filter: blur(5px) brightness(0.5);
+        filter: blur(10px) brightness(0.5);
         background: #00000070;
         cursor: default;
       }
@@ -69,6 +82,33 @@ $white: #f1e4f3;
         p {
           position: absolute;
           bottom: 10px;
+        }
+      }
+      .intro {
+        position: relative;
+        background: url(./ressources/photo-1589128995173-e1cd084b3db9.jpeg)
+          no-repeat fixed center/cover;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          z-index: 0;
+          background-color: #00000095;
+        }
+        p {
+          text-align: justify;
+          width: 60%;
+          line-height: calc(7px + 4vw);
+          font-size: calc(1rem + 0.5vw);
+          position: relative;
+          z-index: 100;
         }
       }
     }
@@ -159,4 +199,7 @@ $white: #f1e4f3;
       }
     }
   }
+}
+
+@media screen, (max-width: 400px) {
 }
