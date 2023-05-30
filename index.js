@@ -40,3 +40,10 @@ download.addEventListener("click", () => {
     notification.remove();
   }, 3000);
 });
+
+// merci à chat gpt qui m'a aidé dans la création de ce joli bout de code !
+window.onload = function () {
+  setTimeout(function () {
+    window.scrollTo(0, 0);
+  }, 0);
+};

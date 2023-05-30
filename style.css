@@ -30,7 +30,7 @@
 }
 * body main {
   background: rgb(11, 57, 84);
-  background: linear-gradient(180deg, rgb(11, 57, 84) 0%, rgb(60, 72, 88) 100%);
+  background: linear-gradient(180deg, rgb(11, 57, 84) 0%, rgb(18, 94, 138) 100%);
   transition: 0.2s;
 }
 * body main .download {
@@ -92,6 +92,20 @@
 * body main .intro p {
   text-align: justify;
   width: 60%;
+  line-height: calc(7px + 4vw);
+  font-size: calc(1rem + 0.5vw);
+  position: relative;
+  z-index: 100;
+}
+* body main .history {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* body main .history p {
+  text-align: justify;
+  width: 75%;
   line-height: calc(7px + 4vw);
   font-size: calc(1rem + 0.5vw);
   position: relative;

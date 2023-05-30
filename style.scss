@@ -43,7 +43,7 @@ $white: #f1e4f3;
       background: linear-gradient(
         180deg,
         rgba(11, 57, 84, 1) 0%,
-        rgb(60, 72, 88) 100%
+        rgb(18, 94, 138) 100%
       );
       transition: 0.2s;
       .download {
@@ -105,6 +105,20 @@ $white: #f1e4f3;
         p {
           text-align: justify;
           width: 60%;
+          line-height: calc(7px + 4vw);
+          font-size: calc(1rem + 0.5vw);
+          position: relative;
+          z-index: 100;
+        }
+      }
+      .history {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        p {
+          text-align: justify;
+          width: 75%;
           line-height: calc(7px + 4vw);
           font-size: calc(1rem + 0.5vw);
           position: relative;
