@@ -102,6 +102,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding-bottom: 20rem;
+}
+* body main .history h1 {
+  font-size: 3.5rem;
 }
 * body main .history p {
   text-align: justify;
@@ -114,12 +119,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+* body main .working h1 {
+  font-size: 3.5rem;
 }
 * body main .working p {
   text-align: justify;
-  width: 75%;
+  width: 70%;
   line-height: calc(7px + 4vw);
   font-size: calc(1rem + 0.5vw);
+  margin-right: 20px;
+}
+* body main .working img {
+  width: 50%;
 }
 * body .hamburger {
   position: fixed;
@@ -198,6 +211,18 @@
 * body ul.nav a:hover::before {
   visibility: visible;
   width: 100%;
+}
+
+@media screen and (max-width: 1130px) {
+  .working img {
+    display: none;
+  }
+  .working {
+    width: 100%;
+  }
+  .explain {
+    flex-direction: row;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
