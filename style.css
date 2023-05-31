@@ -108,8 +108,18 @@
   width: 75%;
   line-height: calc(7px + 4vw);
   font-size: calc(1rem + 0.5vw);
-  position: relative;
-  z-index: 100;
+}
+* body main .working {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+* body main .working p {
+  text-align: justify;
+  width: 75%;
+  line-height: calc(7px + 4vw);
+  font-size: calc(1rem + 0.5vw);
 }
 * body .hamburger {
   position: fixed;
