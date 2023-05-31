@@ -39,7 +39,7 @@ $white: #f1e4f3;
         cursor: default;
       }
       .creators {
-        min-height: 100vh;
+        min-height: 50vh;
         display: flex;
         display: grid;
         place-items: center;
@@ -51,7 +51,7 @@ $white: #f1e4f3;
         }
       }
       .sources {
-        min-height: 100vh;
+        min-height: 50vh;
         display: grid;
         place-items: center;
         text-align: center;
@@ -60,6 +60,7 @@ $white: #f1e4f3;
         }
         p {
           font-size: 2rem;
+          padding: 10px;
         }
       }
     }

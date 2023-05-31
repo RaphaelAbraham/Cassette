@@ -10,6 +10,10 @@
   font-family: "pt sans", sans-serif;
   scroll-behavior: smooth;
 }
+*::-moz-selection {
+  color: #a0dde6;
+  background-color: rgba(12, 24, 33, 0.2352941176);
+}
 *::selection {
   color: #a0dde6;
   background-color: rgba(12, 24, 33, 0.2352941176);
@@ -29,7 +33,7 @@
   cursor: default;
 }
 * body main .creators {
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   display: grid;
   place-items: center;
@@ -41,7 +45,7 @@
   font-size: 3.5rem;
 }
 * body main .sources {
-  min-height: 100vh;
+  min-height: 50vh;
   display: grid;
   place-items: center;
   text-align: center;
@@ -51,6 +55,7 @@
 }
 * body main .sources p {
   font-size: 2rem;
+  padding: 10px;
 }
 * body .test {
   position: fixed;
@@ -99,7 +104,9 @@
   left: 50%;
 }
 * ul.nav {
+  height: -moz-fit-content;
   height: fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   justify-content: center;
   align-items: center;
@@ -140,6 +147,4 @@
 * ul.nav a:hover::before {
   visibility: visible;
   width: 100%;
-}
-
-/*# sourceMappingURL=ressources.css.map */
+}/*# sourceMappingURL=ressources.css.map */
