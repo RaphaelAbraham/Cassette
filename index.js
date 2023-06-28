@@ -11,6 +11,12 @@ hamburger.addEventListener("click", () => {
   main.classList.toggle("blur");
 });
 
+nav.addEventListener("click", () => {
+  main.classList.remove("blur");
+  hamburger.classList.remove("active");
+  nav.classList.remove("active");
+});
+
 document.body.addEventListener("keypress", (e) => {
   if (e.key == "m") {
     main.classList.toggle("blur");
